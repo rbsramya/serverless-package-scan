@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/rbsramya/serverless-package-scan.git"
   },
-  "author": "luqman",
+  "author": "ramya",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/rbsramya/serverless-package-scan.git/issues"
