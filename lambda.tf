@@ -11,7 +11,7 @@ data "archive_file" "lambda" {
 
 resource "aws_lambda_function" "own_lambda" {
   function_name    = var.lambda_function_name
-  handler          = "${var.lambda_file_name}.handler"  # Fixed handler
+  handler          = "${var.lambda_file_name}.handler" # Fixed handler
   runtime          = "nodejs22.x"
   role             = aws_iam_role.iam_for_lambda.arn
   filename         = data.archive_file.lambda.output_path
