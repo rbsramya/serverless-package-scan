@@ -9,6 +9,13 @@ data "aws_iam_policy_document" "inline_policy_cloudwatch" {
   }
 }
 
+resource "aws_iam_role_policy" "lambda_logging" {
+  name   = "lambda_logging"
+  role   = aws_iam_role.iam_for_lambda.id
+  policy = data.aws_iam_policy_document.inline_policy_cloudwatch.json
+}
+
+
 data "aws_iam_policy_document" "assume_role" {
   statement {
     effect = "Allow"
