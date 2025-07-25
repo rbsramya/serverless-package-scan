@@ -59,20 +59,23 @@ jobs:
     - name: Run TFLint
       run: tflint -f compact
 
+              - name: Authenticate Snyk
+  run: echo "SNYK_TOKEN=${{ secrets.SNYK_TOKEN }}" >> $GITHUB_ENV
+
   ########################################
   # Add a job for snyk scan of your code #
   ########################################
 
   ########################################
-  # job name: snyk-checks
-  # Enable:
-  # - snyk code test
-  # - snyk test
-  # - snyk iac test
-  # - snyk container test <image-name>
-  # Also, enable:
-  # outputs:
-  #   status: ${{ job.status }}
+  job name: snyk-checks
+  Enable:
+  - snyk code test
+  - snyk test
+  - snyk iac test
+  - snyk container test <image-name>
+  Also, enable:
+  outputs:
+    status: ${{ job.status }}
   # for use in the summary
   ########################################
 
@@ -99,3 +102,6 @@ jobs:
           echo '' >> $GITHUB_STEP_SUMMARY
 
           echo '## Job ran by: ${{ github.actor }}' >> $GITHUB_STEP_SUMMARY
+
+  
+
