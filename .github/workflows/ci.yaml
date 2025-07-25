@@ -52,9 +52,9 @@ jobs:
 
       - name: Init TFLint
         run: tflint --init
-        tflint --disable-rule=terraform_module_version \
-       --disable-rule=terraform_required_providers \
-       --disable-rule=terraform_required_version
+             tflint --disable-rule=terraform_module_version \
+             --disable-rule=terraform_required_providers \
+             --disable-rule=terraform_required_version
 
 
       - name: Run TFLint
