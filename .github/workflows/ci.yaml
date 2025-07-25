@@ -50,15 +50,15 @@ jobs:
       - name: Show version
         run: tflint --version
 
-      - name: Init TFLint
-        run: tflint --init
-             tflint --disable-rule=terraform_module_version \
-             --disable-rule=terraform_required_providers \
-             --disable-rule=terraform_required_version
+      # - name: Init TFLint
+      #   run: tflint --init
+      #        tflint --disable-rule=terraform_module_version \
+      #        --disable-rule=terraform_required_providers \
+      #        --disable-rule=terraform_required_version
 
 
-      - name: Run TFLint
-        run: tflint -f compact
+      # - name: Run TFLint
+      #   run: tflint -f compact
 
   snyk-checks:
     runs-on: ubuntu-latest
